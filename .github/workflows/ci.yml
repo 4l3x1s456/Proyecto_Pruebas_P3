@@ -29,6 +29,3 @@ jobs:
 
       - name: Ejecutar cobertura del front y back
         run: npm test --code-coverage
-
-      - name: Simular despliegue
-        run: echo "Aqui toca poner el despliegue XD."
