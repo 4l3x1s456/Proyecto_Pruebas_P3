@@ -8,7 +8,6 @@ const productosRoutes = require('./routes/productos');
 const usuariosRoutes = require('./routes/usuarios');
 const pedidosRoutes = require('./routes/pedidos');
 
-// Importar middleware
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 
 // Importar configuración de base de datos
