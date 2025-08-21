@@ -30,17 +30,5 @@ jobs:
       - name: Ejecutar cobertura del front y back
         run: npm test --code-coverage
 
-      - name: Instalar k6
-        run: npm run k6:install
-
-      - name: Ejecutar pruebas de k6 (usuario)
-        run: chmod +x tests/k6/usuarios.performance.js
-
-      - name: Ejecutar pruebas de k6 (pedidos)
-        run: chmod +x tests/k6/pedidos.performance.js
-
-      - name: Ejecutar pruebas de k6 (productos)
-        run: chmod +x tests/k6/productos.performance.js
-
       - name: Simular despliegue
         run: echo "Aqui toca poner el despliegue XD."
