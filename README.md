@@ -9,7 +9,6 @@ E-commerce API desarrollado en Node.js con Express, migrado desde una aplicació
 - **Autenticación**: JWT (JSON Web Tokens)
 - **Seguridad**: bcryptjs para hash de contraseñas
 - **Testing**: Jest + Supertest
-- **Linting**: ESLint
 - **Desarrollo**: Nodemon para hot reload
 
 ## 📁 Estructura del Proyecto
@@ -39,10 +38,15 @@ proyecto-de-pruebas-en-node/
 │   ├── assets/                  # Imágenes e iconos
 │   ├── css/                     # Estilos CSS
 │   ├── js/                      # JavaScript del frontend
+│   │   ├── __tests__/           # Pruebas para el frontend
+│   │   ├── componentes/         # Funcionalidad de UI
+│   │   └── funcionalidad/       # Funcionalidad de cada apartado
 │   └── index.html               # Página principal
 ├── tests/
 │   ├── api/                     # Tests de endpoints
-│   ├── models/                  # Tests de modelos
+│   ├── controllers/             # Test de controllers
+│   ├── models/                  # Tests de modelos4
+│   ├── k6/                      # Test de k6      
 │   └── setup.js                 # Configuración de tests
 ├── .env                         # Variables de entorno
 ├── ecommerce-shop.sql          # Base de datos
@@ -105,16 +109,6 @@ npm run test:watch
 
 # Generar reporte de cobertura
 npm run test:coverage
-```
-
-### Linting
-```bash
-# Verificar código
-npm run lint
-
-# Corregir automáticamente
-npm run lint:fix
-```
 
 ## 📚 API Endpoints
 
@@ -155,7 +149,7 @@ Authorization: Bearer tu_jwt_token
 
 ### Roles
 - **cliente**: Usuario normal, puede hacer pedidos
-- **admin**: Administrador, acceso completo
+- **admin**: Administrador, acceso completo (no implementado)
 
 ## 🧪 Testing
 
@@ -175,15 +169,6 @@ tests/
 ├── database.test.js            # Tests de conexión a DB
 └── setup.js                    # Configuración global
 ```
-
-## 🔧 Herramientas de Desarrollo
-
-### ESLint
-Configurado con reglas para Node.js y Jest. El archivo `eslint.config.js` incluye:
-- Indentación de 4 espacios
-- Uso de comillas simples
-- Puntos y comas obligatorios
-- Límite de 100 caracteres por línea
 
 ### Jest
 Configurado para tests de Node.js con:
@@ -214,17 +199,7 @@ Este proyecto es una migración completa de un e-commerce desarrollado en PHP a 
 2. **Autenticación**: Sesiones PHP → JWT
 3. **Estructura**: MVC tradicional → Arquitectura en capas
 4. **Testing**: Sin tests → Jest + Supertest
-5. **Linting**: Sin linting → ESLint
 6. **API**: Endpoints PHP → API REST con Express
-
-### Ventajas de la migración:
-- ✅ Mejor estructura de código
-- ✅ Tests automatizados
-- ✅ Linting y código limpio
-- ✅ API REST bien documentada
-- ✅ Autenticación moderna con JWT
-- ✅ Middleware reutilizable
-- ✅ Manejo de errores centralizado
 
 ## 📝 Scripts Disponibles
 
